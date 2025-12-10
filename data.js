@@ -12,7 +12,7 @@ const hooksData = [
     "hook_text": "How NOT to play this game",
     "hook_why": "Unexpected + funny + teaches something",
     "link_reference": "",
-    "video": "https://ilans.org/sett_videos/anna1.mp4",
+    "video": "https://ilans.org/sett_videos/placer2.mp4",
     "thumbnail": ""
   },
   {

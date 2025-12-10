@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const sortSelect = document.getElementById('sort-select');
 
     // Live Data URL (Google Apps Script)
-    const LIVE_DATA_URL = 'https://script.googleusercontent.com/a/macros/sett.ai/echo?user_content_key=AehSKLi9smCHUL_fn0_MmDWeSdPimzu6Bk8tiKwKTV_5CmrLVOILZUKnlNjelllNOUdyQYS5y3KacXmLY7R5eS-CWPz8RXP_ULY5agyNlooltX0J1Lcpc-noIP5UyYkf_xakLvq3TNskEBlYd_uFwXaEZ_n4YAJ3Qn41kl-uyZ0SnF9TN_HDo6sI_Hc-N4o2ddHNIP4mRnQxxaroaxeIZyT6RbqkF_TaaK6gOptuRGZ0xjRHGE6kRkfLmBzRS3eHX4SKnL6vRrjrU1opzZ092ZQkqKl874ltsG4jma3k8KBRpdxjTsctCoc&lib=MHs0efkla0CHf1su8vv2t8_LSJHYMIpDM';
+    const LIVE_DATA_URL = 'https://script.google.com/macros/s/AKfycbz5L0AS10XJ6yoX22wBAXqIlYFCg1r3CwJ3QLl97tKgxA9aqQY4O4odmAwDpArEpPax/exec';
 
     // Global Data Variables
     let allData = (typeof hooksData !== 'undefined') ? hooksData : [];
