@@ -80,10 +80,13 @@ document.addEventListener('DOMContentLoaded', () => {
             card.classList.add('card');
             card.setAttribute('data-index', index);
 
+            const fallbackVideo = 'https://ilans.org/sett_videos/anna1.mp4';
+            const videoSrc = item.video ? item.video : fallbackVideo;
+
             card.innerHTML = `
                 <div class="card-image-wrapper">
                     <video 
-                        src="${item.video}" 
+                        src="${videoSrc}" 
                         class="card-thumbnail video-thumbnail" 
                         muted 
                         loop 
