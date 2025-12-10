@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strong Hooks | Gallery</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">
+            <h1>Strong<span>Hooks</span></h1>
+        </div>
+        <div class="controls">
+            <select id="filter-select">
+                <option value="all">All Hooks</option>
+            </select>
+            <select id="sort-select" style="margin-left: 10px;">
+                <option value="default">Default</option>
+                <option value="az">A-Z (Rewritten Hook)</option>
+            </select>
+        </div>
+    </header>
+
+    <main>
+        <div class="gallery-container" id="gallery-container">
+            <!-- Cards will be injected here via JS -->
+        </div>
+    </main>
+
+    <!-- Video Modal -->
+    <div class="modal-overlay" id="video-modal">
+        <div class="modal-content">
+            <button class="close-modal"><i class="fas fa-times"></i></button>
+
+            <div class="modal-video-section">
+                <!-- Video player -->
+                <video controls playsinline>
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+
+            <div class="modal-info-section">
+                <h2 class="modal-info-h2">Hook Type</h2>
+
+                <div class="comparison-box">
+                    <span class="comparison-label">WHY</span>
+                    <p class="comparison-text" id="modal-rewritten-text">...</p>
+                </div>
+
+                <div class="comparison-box" style="border-left: 3px solid #666;">
+                    <span class="comparison-label">IDEA</span>
+                    <p class="comparison-text" style="color: #aaa;" id="modal-original-text">...</p>
+                </div>
+
+                <div style="margin-top: 30px;">
+                    <span class="comparison-label">Reference Link</span>
+                    <div id="modal-stats" style="margin-top: 10px;">
+                        <!-- Link injected here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
