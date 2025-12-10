@@ -5,7 +5,7 @@
     <h1>CORS Test</h1>
     <div id="output">Testing...</div>
     <script>
-        const url = 'https://docs.google.com/spreadsheets/d/1XE-fpAMIqIu3N9pgc6AXYhHvEjfctMYJcP7dlk_uZek/export?format=csv';
+        const url = 'https://script.googleusercontent.com/a/macros/sett.ai/echo?user_content_key=AehSKLi9smCHUL_fn0_MmDWeSdPimzu6Bk8tiKwKTV_5CmrLVOILZUKnlNjelllNOUdyQYS5y3KacXmLY7R5eS-CWPz8RXP_ULY5agyNlooltX0J1Lcpc-noIP5UyYkf_xakLvq3TNskEBlYd_uFwXaEZ_n4YAJ3Qn41kl-uyZ0SnF9TN_HDo6sI_Hc-N4o2ddHNIP4mRnQxxaroaxeIZyT6RbqkF_TaaK6gOptuRGZ0xjRHGE6kRkfLmBzRS3eHX4SKnL6vRrjrU1opzZ092ZQkqKl874ltsG4jma3k8KBRpdxjTsctCoc&lib=MHs0efkla0CHf1su8vv2t8_LSJHYMIpDM';
         fetch(url)
             .then(response => {
                 if (response.ok) return response.text();

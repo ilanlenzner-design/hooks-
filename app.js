@@ -5,13 +5,43 @@ document.addEventListener('DOMContentLoaded', () => {
     const filterSelect = document.getElementById('filter-select');
     const sortSelect = document.getElementById('sort-select');
 
-    // hooksData is loaded globally from data.js
+    // Live Data URL (Google Apps Script)
+    const LIVE_DATA_URL = 'https://script.googleusercontent.com/a/macros/sett.ai/echo?user_content_key=AehSKLi9smCHUL_fn0_MmDWeSdPimzu6Bk8tiKwKTV_5CmrLVOILZUKnlNjelllNOUdyQYS5y3KacXmLY7R5eS-CWPz8RXP_ULY5agyNlooltX0J1Lcpc-noIP5UyYkf_xakLvq3TNskEBlYd_uFwXaEZ_n4YAJ3Qn41kl-uyZ0SnF9TN_HDo6sI_Hc-N4o2ddHNIP4mRnQxxaroaxeIZyT6RbqkF_TaaK6gOptuRGZ0xjRHGE6kRkfLmBzRS3eHX4SKnL6vRrjrU1opzZ092ZQkqKl874ltsG4jma3k8KBRpdxjTsctCoc&lib=MHs0efkla0CHf1su8vv2t8_LSJHYMIpDM';
+
+    // Global Data Variables
     let allData = (typeof hooksData !== 'undefined') ? hooksData : [];
     let currentData = [...allData];
 
-    // Initial Render
-    renderGallery(currentData);
-    populateFilter(allData);
+    // Initialize with fallback
+    initApp(allData);
+
+    // Fetch Live Data
+    fetchLiveData();
+
+    async function fetchLiveData() {
+        try {
+            const response = await fetch(LIVE_DATA_URL);
+            if (!response.ok) throw new Error('Network response was not ok');
+            const data = await response.json();
+
+            console.log("Live data loaded!", data);
+
+            // Update Global Data
+            allData = data;
+
+            // Re-initialize app with new data
+            initApp(allData);
+
+        } catch (error) {
+            console.error("Failed to load live data, using fallback.", error);
+        }
+    }
+
+    function initApp(data) {
+        currentData = [...data]; // Reset currentData to new full dataset
+        renderGallery(currentData);
+        populateFilter(data);
+    }
 
     // Filter Logic
     filterSelect.addEventListener('change', (e) => {

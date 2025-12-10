@@ -14,16 +14,18 @@ A premium, interactive video gallery designed to showcase "Hook" concepts. The g
 1.  Simply open `index.html` in your browser.
 2.  That's it! It is a static website.
 
-## How to Update Data
-The website uses a local data file (`data.js`) to ensure speed and reliability (avoiding CORS issues). To update the content from your Google Sheet:
+## How It Works (Hybdrid Live Data)
+This app uses a smart hybrid approach for data:
+1.  **Live Mode (Primary)**: The app attempts to fetch data *directly* from the Google Sheet via a custom Apps Script API. This means updates are instant on refresh.
+2.  **Fallback Mode (Offline)**: If the API fails or is offline, it falls back to the local `data.js` file, ensuring the site never crashes.
 
-1.  Open your terminal in this folder.
-2.  Run the sync script:
+### Syncing the Fallback Data
+To keep the fallback file up to date (recommended occasionally):
+1.  Run the sync script locally:
     ```bash
     python3 sync_data.py
     ```
-3.  This downloads the latest CSV and updates `data.js`.
-4.  Refresh `index.html`.
+2.  Commit the updated `data.js` to GitHub.
 
 ## Deployment
 Upload the following files to any static host (Hostinger, Netlify, GitHub Pages, etc.):
