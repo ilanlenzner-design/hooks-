@@ -19,6 +19,20 @@ This app uses a smart hybrid approach for data:
 1.  **Live Mode (Primary)**: The app attempts to fetch data *directly* from the Google Sheet via a custom Apps Script API. This means updates are instant on refresh.
 2.  **Fallback Mode (Offline)**: If the API fails or is offline, it falls back to the local `data.js` file, ensuring the site never crashes.
 
+### How to Connect Your Own Sheet
+If you are setting this up for a new sheet:
+1.  Open your Google Sheet.
+2.  Go to **Extensions > Apps Script**.
+3.  Copy the code from `google_apps_script_code.gs` (included in this repo).
+4.  Paste it into the script editor.
+5.  **Deploy**:
+    *   Click `Deploy` > `New Deployment`.
+    *   Select type: `Web App`.
+    *   **IMPORTANT**: Set "Who has access" to **"Anyone"**.
+    *   Click Deploy.
+6.  Copy the **Web App URL**.
+7.  Open `app.js` in this project and paste the URL into `LIVE_DATA_URL`.
+
 ### Syncing the Fallback Data
 To keep the fallback file up to date (recommended occasionally):
 1.  Run the sync script locally:
