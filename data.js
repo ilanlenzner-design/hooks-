@@ -28,7 +28,7 @@ const hooksData = [
     "hook_text": "\"Breaking News\" style with 2D animated characters",
     "hook_why": "Visually disruptive + absurd = scroll-stopper",
     "link_reference": "Tiki News",
-    "video": "https://ilans.org/sett_videos/anna1.mp4",
+    "video": "https://ilans.org/sett_videos/STPV1756.mp4",
     "thumbnail": ""
   },
   {
